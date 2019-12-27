@@ -1,0 +1,292 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RESULT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' $}"></script>
+  <link rel="stylesheet" href="{% static 'css/template.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slide.css' %}">
+  <script src="{% static 'js/jquery.js' %}"></script>
+
+</head>
+<style>
+     body{
+      background :url('{% static 'images/x.jpeg' %}');
+      background-repeat: no-repeat ;
+        background-size :100%; 
+        font-family: 'M PLUS 1p', sans-serif;
+
+    }
+    .footer{
+     font-family: 'M PLUS 1p', sans-serif;
+    border: 2px solid black;
+    height:7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8f7ee;
+    font-size: 18px;
+}
+    @font-face{
+     font-family:'digital-clock-font';
+     src: url('{% static 'images/digital-7.ttf' %}');
+    }
+    </style>
+<form>
+<body>
+    <script>
+        
+        var j = -100;
+
+var inv2 = setTimeout(function(){
+    setInterval(function() {     
+    if(j < {{profile.score}})
+        document.getElementById("counter").innerHTML = ++j;
+    else
+        clearInterval(inv2);
+},200 / {{profile.score}});
+},2000);
+            
+        </script>
+         <script>
+            var k = -100;
+    
+            var inv1 = setTimeout(function(){
+    setInterval(function() {     
+    if(k < {{profile.attempted}})
+        document.getElementById("countery").innerHTML = ++k;
+    else
+        clearInterval(inv1);
+},200/{{profile.score}});
+},2000);
+
+            </script>
+             <script>
+                    var i = -100;
+            
+                    var inv = setTimeout(function(){
+    setInterval(function() {     
+    if(i <{{profile.correct}})
+        document.getElementById("counters").innerHTML = ++i;
+    else
+        clearInterval(inv);
+},200/{{profile.score}});
+},2000);
+
+                    </script>
+        
+
+                   
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+            <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                <div class="col-lg-3" style=" height: 6vh; display:flex;align-items: center;justify-content: center;color: #d7e9f8;margin-right:55px;"><img src="{% static 'images/RC.png' %} " height="55vh" width="80%"></div>
+                <div class="col-lg-9" style=" height: 6vh; display:flex;align-items: center; justify-content: center;color: #d7e9f8;font-size: 3vh;"></div>
+            </div>
+            <div class="col-lg-2" style=" height: 7vh; display: flex; justify-content: center;align-items: center;color: #d7e9f8">
+                
+            </div>
+            <div class="col-lg-5" style=" height: 7vh;">
+                <div class="row">
+                    <div class="col-lg-5 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        
+                    </div>
+                    <div class="col-lg-4 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        
+                    
+                    </div>
+                    <div class="col-lg-3 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <img src="{% static 'images/Ieee.png' %}" style="height: 5vh;margin-left:-20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+                    <div class="row" style="text-align:center;height:86vh; display: flex; justify-content: center;align-items: center;">
+                        <div class="col" style="width: 80vw; ">
+                            <div class="row" style="height: 45vh;">
+                                <div class="row sevs" style="height: 38vh;width: 62vw;border: black solid 2px;margin-left: 5vw;background-color: black;opacity: 0.9; display: flex; justify-content: center;align-items: center;border-radius: 7px;">
+                                         <div class="col animated flipInY" style=" animation-duration:2s;height: 28vh;width: 12vw;border: black solid px;margin-left: 2vw;margin-top: vh;background-color: rgb(34, 31, 31);box-shadow: 0px 0px 15px 2px rgb(66, 64, 64);border-radius:5px"><p style="color: rgb(155, 146, 146);align-self: stretch;margin-top: 2vh;font-size: 5vh"><strong>SCORE<p style="margin-top: -5vh;font-size: 17vh;color: red " id="counter">-100</p></strong></p></div>
+                                        <div class="col animated flipInY" style="animation-duration:2s;height: 28vh;width: 12vw;border: black solid px;margin-left: 2vw;margin-top: vh;background-color: rgb(34, 31, 31);box-shadow: 0px 0px 15px 2px rgb(66, 64, 64);border-radius:5px"><p style="color: rgb(155, 146, 146);align-self: stretch;margin-top: 2vh;font-size: 5vh"><strong>QUESTIONS<p style="margin-top: -5vh;font-size: 17vh;color: red " id="countery">-100</p></strong></p></div>
+                                        <div class="col animated flipInY" style="animation-duration:2s;height: 28vh;width: 12vw;border: black solid px;margin-left: 2vw;margin-top: vh;margin-right: 2vw;background-color: rgb(34, 31, 31);box-shadow: 0px 0px 15px 2px rgb(66, 64, 64);border-radius:5px"><p style="color: rgb(155, 146, 146);align-self: stretch;margin-top: 2vh;font-size: 5vh"><strong>CORRECT<p style="margin-top: -5vh;font-size: 17vh;color: red " id="counters"> -100 </p></strong></p></div>
+                                </div>
+                            </div>
+                            <div class="row" style="height:30vh;width: 62vw;border: black solid 2px;margin-left: 4vw;margin-top: -1vh;background-color: black;opacity: 0.9; display: flex; justify-content: center;align-items: center;border-radius: 7px;"><h4 style="padding-left: vh;font-size: 5vh;color: rgb(155, 146, 146)"><strong>SPONSORS</strong></h4>
+                            
+                                <div>
+                                     <div>
+                                        <div  style="display: flex;align-items: center;justify-content: center;margin-left:2vw;"><img src="{% static 'images/1.jpg' %}"  style="height: 150px;width: 400px"></div>
+
+                                    </div>
+                                 </div>
+                            </div>
+                         </div>
+                        <!--<div class="" style="height: 75vh;width: 24vw;border: black solid 2px;margin-left: vw;margin-right: 6vw;margin-top: vh;background-color: black;opacity: 0.9;border-radius: 7px; display: flex; justify-content: center;align-items: center;color:rgb(155, 146, 146);font-size: 5vh;">SIDE EVENTS</div>-->
+                     </div>
+
+
+                        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+                            <div class="col-lg-12 footer" >
+                                &copy PICT IEEE STUDENT BRANCH
+                            </div>
+                        </div>
+                        </div>
+                        
+           </body>
+       </form>
+</html>{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' $}"></script>
+  <link rel="stylesheet" href="{% static 'css/template.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slide.css' %}">
+  <script src="{% static 'js/jquery.js' %}"></script>
+
+</head>
+<style>
+     body{
+      background :url('{% static 'images/x.jpeg' %}');
+      background-repeat: no-repeat ;
+        background-size :100%;
+        font-family: 'M PLUS 1p', sans-serif;
+
+    }
+    .footer{
+     font-family: 'M PLUS 1p', sans-serif;
+    border: 2px solid black;
+    height:7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8f7ee;
+    font-size: 18px;
+}
+    @font-face{
+     font-family:'digital-clock-font';
+     src: url('{% static 'images/digital-7.ttf' %}');
+    }
+    </style>
+<form>
+<body style="overflow:hidden">
+    <script>
+
+        var j = -100;
+
+var inv2 = setTimeout(function(){
+    setInterval(function() {
+    if(j < {{profile.score}})
+        document.getElementById("counter").innerHTML = ++j;
+    else
+        clearInterval(inv2);
+},200 / {{profile.score}});
+},2000);
+
+        </script>
+         <script>
+            var k = -100;
+
+            var inv1 = setTimeout(function(){
+    setInterval(function() {
+    if(k < {{profile.attempted}})
+        document.getElementById("countery").innerHTML = ++k;
+    else
+        clearInterval(inv1);
+},200/{{profile.score}});
+},2000);
+
+            </script>
+             <script>
+                    var i = -100;
+
+                    var inv = setTimeout(function(){
+    setInterval(function() {
+    if(i <{{profile.correct}})
+        document.getElementById("counters").innerHTML = ++i;
+    else
+        clearInterval(inv);
+},200/{{profile.score}});
+},2000);
+
+                    </script>
+
+
+
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+            <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                <div class="col-lg-3" style=" height: 6vh; display:flex;align-items: center;justify-content: center;color: #d7e9f8;margin-right:55px;"><img src="{% static 'images/RC.png' %} " height="55vh" width="80%"></div>
+                <div class="col-lg-9" style=" height: 6vh; display:flex;align-items: center; justify-content: center;color: #d7e9f8;font-size: 3vh;"></div>
+            </div>
+            <div class="col-lg-2" style=" height: 7vh; display: flex; justify-content: center;align-items: center;color: #d7e9f8">
+
+            </div>
+            <div class="col-lg-5" style=" height: 7vh;">
+                <div class="row">
+                    <div class="col-lg-5 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+
+                    </div>
+                    <div class="col-lg-4 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+
+
+                    </div>
+                    <div class="col-lg-3 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <img src="{% static 'images/Ieee.png' %}" style="height: 5vh;margin-left:-20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="row" style="text-align:center;height:86vh; display: flex; justify-content: center;align-items: center;">
+        <div class="col" style="width: 80vw; ">
+            <div class="row" style="height: 45vh;">
+                <div class="row sevs" style="height: 38vh;width: 62vw;border: black solid 2px;margin-left: 5vw;background-color: black;opacity: 0.9; display: flex; justify-content: center;align-items: center;border-radius: 7px;">
+                         <div class="col animated flipInY" style=" animation-duration:2s;height: 28vh;width: 12vw;border: black solid px;margin-left: 2vw;margin-top: vh;background-color: rgb(34, 31, 31);box-shadow: 0px 0px 15px 2px rgb(66, 64, 64);border-radius:5px"><p style="color: rgb(155, 146, 146);align-self: stretch;margin-top: 2vh;font-size: 5vh"><strong>SCORE<p style="margin-top: -5vh;font-size: 17vh;color: red " id="counter">-100</p></strong></p></div>
+                        <div class="col animated flipInY" style="animation-duration:2s;height: 28vh;width: 12vw;border: black solid px;margin-left: 2vw;margin-top: vh;background-color: rgb(34, 31, 31);box-shadow: 0px 0px 15px 2px rgb(66, 64, 64);border-radius:5px"><p style="color: rgb(155, 146, 146);align-self: stretch;margin-top: 2vh;font-size: 5vh"><strong>QUESTIONS<p style="margin-top: -5vh;font-size: 17vh;color: red " id="countery">-100</p></strong></p></div>
+                        <div class="col animated flipInY" style="animation-duration:2s;height: 28vh;width: 12vw;border: black solid px;margin-left: 2vw;margin-top: vh;margin-right: 2vw;background-color: rgb(34, 31, 31);box-shadow: 0px 0px 15px 2px rgb(66, 64, 64);border-radius:5px"><p style="color: rgb(155, 146, 146);align-self: stretch;margin-top: 2vh;font-size: 5vh"><strong>CORRECT<p style="margin-top: -5vh;font-size: 17vh;color: red " id="counters"> -100 </p></strong></p></div>
+                </div>
+            </div>
+            <div class="row" style="height:30vh;width: 62vw;border: black solid 2px;margin-left: 4vw;margin-top: -1vh;background-color: black;opacity: 0.9; display: flex; justify-content: center;align-items: center;border-radius: 7px;"><h4 style="padding-left: vh;font-size: 5vh;color: rgb(155, 146, 146)"><strong>SPONSOR</strong></h4>
+
+                <div>
+                     <div>
+                        <div  style="display: flex;align-items: center;justify-content: center;"><img src="{% static 'images/1.jpg' %}"  style="height: 150px;width: 400px; "></div>
+
+                    </div>
+                 </div>
+            </div>
+         </div>
+        <div class="" style="height: 75vh;width: 24vw;border: black solid 2px;margin-left: vw;margin-right: 6vw;margin-top: 0vh;background-color: black;opacity: 0.9;border-radius: 7px; display: flex;color:rgb(155, 146, 146);font-size: 4vh;">
+            <div style="position: fixed; left:70vw; top: 17vh;border:0px solid red;height: 15vh; width: 25vw;font-size:25px">
+            CLASH:<br>
+                A C/C++ coding competition held in high regard for the conceptual challenges it brings
+                to a coder's mind. 'C'-LASH beckons all the programmers out there, amateur and
+                experienced alike, to participate and enhance their coding skills!
+            </div>
+        </div>
+     </div>
+
+
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+            <div class="col-lg-12 footer" >
+                &copy PICT IEEE STUDENT BRANCH
+            </div>
+        </div>
+        </div>
+
+</body>
+       </form>
+</html>

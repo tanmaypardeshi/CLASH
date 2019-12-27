@@ -1,0 +1,265 @@
+body{
+    background: url(bg3.jpg);
+    background-repeat: no-repeat;
+       background-size:100%;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       
+       
+}
+#Lg{
+     height: 6vh;
+      display:flex;
+      align-items: center;
+       justify-content: center;
+       color: #ffffff;
+       font-size: 3vh;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+input: invalid{
+    box-shadow: none;
+}
+.main{
+    position: relative;
+    z-index: 0;
+    margin-left: 5vw; 
+   
+}
+.bottom{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+   /* background-color: black; */
+   /* background-color:black; */
+   background: linear-gradient(to top,#0d1414,#112020);
+    width: 22vw;
+    height: 60vh;
+    margin: 13vh 22.5vw 13vh 22.5vw;
+    box-shadow: 0 0 5px 1px rgb(2, 2, 2);
+    border-radius: 5px;
+    opacity: 0;
+    color: #e8f7ee;
+}
+    
+.left{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #F4E7BB;
+    position: absolute;
+    /* background:linear-gradient(to top, rgb(0, 0, 0),#006B61); */
+    /* background-color:black; */
+     background: linear-gradient(to top,#135a55,rgb(26, 119, 114));
+    /* background-color:rgb(26, 119, 114);  */
+
+    width: 22vw;
+    height: 60vh;
+    margin: 13vh 33.5vw 13vh 11.5vw;
+    box-shadow: -1px 0 5px 0px rgb(2, 2, 2);
+    border-radius: 5px;
+    justify-content:center;
+    text-align:center;
+    
+    }
+    .a1{
+        animation: slidel .3s ease-in-out forwards;
+       
+    }
+    .a2{
+        animation: slider .3s ease-in-out forwards;
+    }
+    .a3{
+        animation: slideb .3s ease-in-out forwards;
+    }
+    @keyframes slideb{
+        0%{
+    
+        }
+        
+        100%{
+            /* background:linear-gradient(to top, #a3235f,#AB81CD); */
+            transform:  translateY(0vh) ;
+           
+        }
+    }
+    @keyframes slidel{
+        0%{
+    
+        }
+        
+        100%{
+            /* background:linear-gradient(to top, #a3235f,#AB81CD); */
+            transform: translateX(-11.7vw)  ;
+           
+        }
+    }
+.right{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* color: #241706; */  color:#AFDEDC;
+    /* background:linear-grdient(to top, rgb(0, 0, 0),#006B61); */
+    /* background-color:#063733; */
+    /* background-color:black; */
+    /* background: linear-gradient(to top,#132e29,#135a55); */
+    background: linear-gradient(to top,#135a55,rgb(26, 119, 114)); 
+    position: absolute;
+    width: 22vw;
+    height: 60vh;
+    margin: 13vh 11.5vw 13vh 33.5vw;
+    box-shadow: 1px 0 5px 0px rgb(2, 2, 2);
+    border-radius: 5px;
+   
+}
+@keyframes slider{
+    0%{
+
+    }
+    60%{
+       
+    }
+    100%{
+        
+        transform: translateX(11.7vw)  ;
+        
+    }
+}
+
+
+input[type=text],
+input[type=password],
+input[type=tel],
+input[type=email] {
+    border: none;
+    border-bottom: 1px solid  #F4E7BB;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #e8f7ee;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    width: 15vw;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(229, 231, 231);
+    opacity: 1;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    justify-content:center;
+    text-align:center;
+    /* Firefox */
+}
+.bot{
+    text-align:center;
+    margin-top:5vh;
+    justify-content: center;
+    font-size:4vh;
+    /* color: #241706;
+ */color: #e8f7ee;
+}
+.bot1{
+    text-align:center;
+    margin-top:5vh;
+    justify-content: center;
+    font-size:4vh;
+    font-weight: 500;
+    /* color: #f7f9f9; */color: #e8f7ee;
+}
+.footer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid black;
+    height:7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8f7ee;
+    font-size: 18px;
+}
+.iconimg{
+    height:3vh;
+ margin-right: -0.8vw;
+}
+.inptyp{
+    margin-left:-0.4vw;;
+}
+.ph{
+     height:3vh;
+      margin-right: -0.1vw;
+}
+.em{
+     height:3vh;
+      margin-right: -0.1vw;
+}
+.inputBox{
+    justify-content:center;
+    text-align:center;
+    margin-left:4vw;
+    margin-right:4vw;
+    height:95px;
+}
+.button {
+    border-radius: 5px;
+     /* background-color:#03af98; */
+     /* background-color: #0c201b; */
+     background-color:#0f2922;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    justify-content:center;
+    text-align: center;
+    height:5vh;
+    width: 8vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    outline:none;
+  }
+  .button:hover{
+    background-color:#071310;/*#f4511e; */
+  }
+  .btl{
+     /* background-color:#02ad97;
+     color:rgb(255, 255, 255);
+     border:none;
+     width:8vw;
+     height: 5vh;
+     font-size: 17px;
+     border-radius: 5px;  */
+     color:white;
+     border-radius:5px;
+     height:5vh;
+     /* background-color:rgb(17, 60, 82);  */
+     background-color:rgb(10, 171, 183);
+     box-shadow:0px 0px 3px 1px rgb(21, 71, 73);
+     border:none;
+     width:8vw;
+     font-weight:bold;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .btl:hover{
+    background-color:#147265;
+    color:black;
+  }
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .a{
+    content:disabled;  
+  }
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  

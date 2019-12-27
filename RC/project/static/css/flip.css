@@ -1,0 +1,59 @@
+@-webkit-keyframes flip {
+    from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+  }
+  
+  @keyframes flip {
+    from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+  }
+  
+  
+  /* entire container, keeps perspective */
+  .flip-container {
+    perspective: 1000;
+  }
+  
+  .flip-container, .front, .back {
+    width: 320px;
+    height: 480px;
+  }
+  
+  /* flip speed goes here */
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    -webkit-animation-name: flip;
+    animation-name: flip;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+  
+  /* hide back of pane during swap */
+  .front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* front pane, placed above back */
+  .front {
+    
+    
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+  }
+  
+  /* back, initially hidden pane */
+  .back {
+    transform: rotateY(180deg);
+    
+  }
+  

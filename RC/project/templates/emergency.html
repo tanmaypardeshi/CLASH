@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency login</title>
+</head>
+<body>
+    {% if error %}
+    {{ error }}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        Enter Username:<br>
+        <input type="text" name="username" id="id_username" required placeholder="Username"><br>
+        Enter password<br>
+        <input type="password" name="password" required placeholder="Password"><br>
+        Enter admin password:<br>
+        <input type="password" name="superpass" placeholder="Admin Password"><br>
+        Enter the time to be added:<br>
+        <input type="number" name="time" required><br>
+        <button type="submit" formmethod="post">Submit</button>
+
+    </form>
+
+
+</body>
+</html>

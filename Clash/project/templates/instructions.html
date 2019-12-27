@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Instructions Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/ins.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <script>
+            function startAnimation() {
+                document.getElementById("animation1").style.animation = "slider3 1.1s linear 0s 1 reverse";
+                document.getElementById("animation2").style.animation = "slider3 1.1s linear 0s 1 reverse";
+                document.getElementById("animation3").style.animation = "slider4 1.1s linear 0s 1 reverse";
+                document.getElementById("animation4").style.animation = "slider4 1.1s linear 0s 1 reverse";
+            }
+        </script>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    </head>
+    <form method="post" action="../question/">
+        <body style="background-image:url(/static/images/bg3.jpg);overflow:hidden">
+            <div class="container-fluid">
+                <div class="row" style="background-color: rgb(0, 0, 0); height: 7vh;">
+                    <div class="col-lg-5" style="height: 7vh; display: flex; justify-content: center; align-items: center;">
+                        <div class="col-lg-3" style="height: 6vh; display:flex; align-items: center; justify-content: center; color: #d7e9f8"><img src="{% static 'images/clash.jpg' %}" height="55vh" width="80%"></div>
+                        <div class="col-lg-9" style="height: 6vh; display:flex; align-items: center; justify-content: center; color: #d7e9f8; font-size: 3vh;">INSTRUCTIONS</div>
+                    </div>
+                    <div class="col-lg-2" style="height: 7vh; display: flex; justify-content: center; align-items: center; color: #d7e9f8"></div>
+                    <div class="col-lg-5" style="height: 7vh;">
+                        <div class="row">
+                            <div class="col-lg-5 mt-1" style="height: 6vh; display: flex; justify-content: center; align-items: center;"></div>
+                            <div class="col-lg-4 mt-1" style="height: 6vh; display: flex; justify-content: center; align-items: center;"></div>
+                            <div class="col-lg-3 mt-1" style="height: 6vh; display: flex; justify-content: center; align-items: center;">
+                                <img src="{% static 'images/IEEE_logo.png' %}" style="height: 5vh;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main">
+                    <div class="sidebar1" id="animation3"></div>
+                    <div class="bottom" id="animation4">
+                        <h4>Lifeline</h4>
+                        <div id="bottomDiv">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar2" id="animation1"></div>
+                    <div class="middle" id="animation2">
+                        <h4>Lifeline</h4>
+                        <div id="middleDiv">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>
+
+                    <div class="top">
+                        <h3>Instructions</h3>
+                        <div id="topDiv">
+                            <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+                            <li><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></li>
+                            <li><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></li>
+                            <li><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
+                        </div>
+                        <div class="wrap">
+                                <form method="post" formaction ="../question/">
+                                {% csrf_token %}
+                            <button onclick="startAnimation()" type="submit"  class="button" id="sbmt">PROCEED</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="background-color: rgb(0, 0, 0); height:7vh;">
+                    <div class="col-lg-12" style="font-size: 18px; height: 7vh; display: flex; justify-content: center; align-items: center; color: #d7e9f8">
+                        &copy PICT IEEE STUDENT BRANCH
+                    </div>
+                </div>
+            </div>
+        </body>
+    </form>
+</html>

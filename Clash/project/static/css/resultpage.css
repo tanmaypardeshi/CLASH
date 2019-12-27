@@ -1,0 +1,230 @@
+body {
+    background-image: url('bg.jpg');
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    -moz-user-select: none;
+    color: #e8f7ee;
+    overflow: hidden;
+}
+
+.button {
+    width: 70%;
+    background-color: rgb(253, 30, 30);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 5vh;
+    outline: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: rgba(255, 47, 47, 0.993);
+}
+
+.ldBar {
+    transform: rotate(180deg);
+    transform: rotateX(180deg);
+    font-size: 0;
+}
+
+.boxes {
+    background: linear-gradient(to top, #0d1414, #112020);
+    color: #f1f8e1;
+}
+
+@keyframes myframes {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+.connect1 {
+    position: absolute;
+    left: 17vh;
+    top: 15vh;
+    animation-name: myframes;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+}
+
+.connect2 {
+    position: absolute;
+    left: 61.5vh;
+    top: 7vh;
+    animation-name: myframes;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+}
+
+.connect3 {
+    position: absolute;
+    left: 31vh;
+    top: 40vh;
+    animation-name: myframes;
+    animation-duration: 2.5s;
+    animation-timing-function: ease;
+}
+
+.connect4 {
+    position: absolute;
+    left: 69vh;
+    top: 35vh;
+    animation-name: myframes;
+    animation-duration: 2.5s;
+    animation-timing-function: ease;
+}
+
+@keyframes myframes2 {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+@keyframes myframes3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#box1 {
+    margin-top: 5vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    color: #AFDEDC;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 7px 7px 2px rgb(5, 1, 20, 0.7);
+    animation: myframes2 1.5s 0s, myframes3 1.5s 1.5s ease-in-out infinite;
+}
+
+#box2 {
+    margin-top: 20vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    color: #AFDEDC;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 7px 7px 2px rgb(5, 1, 20, 0.7);
+    animation: myframes2 2s 0s, myframes3 1.5s 3s ease-in-out infinite;
+}
+
+h4 {
+    height: 6vh;
+    margin-top: 1vh;
+    border-radius: 1vh;
+    background: linear-gradient(to top, #eaeaee, #a7a7a7);
+    color: rgb(1, 15, 15);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+h2 {
+    height: 8vh;
+    color: #f1f8e1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#smallfont {
+    font-size: 2.6vh;
+}
+
+.Sponsors {
+    margin-left: 3vh;
+    margin-right: -6vh;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    justify-content: center;
+    width: 200vh;
+    height: 23vh;
+    border: 2px solid rgb(4, 95, 83, 75);
+    border-radius: 5px;
+    color: #e8f7ee;
+}
+
+.RC {
+    height: 82vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 48vh;
+    margin-left: 6vh;
+    margin-right: 6vh;
+    justify-content: center;
+    color: rgb(193, 223, 223);
+    border: 2px solid rgb(4, 95, 83, 0.75);
+    border-radius: 5px;
+    color: #e8f7ee;
+}
+
+#logos {
+    border-radius: 1vh;
+    width: 110vh;
+    margin-left: 5vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    margin-right: 4vh;
+    margin-bottom: 2vh;
+    align-items: center;
+    height: 15vh;
+    transition: transform;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.hover-shadow:hover {
+    transform: scale(0.90);
+}
+
+.info {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    margin-left: 2.5vh;
+    margin-right: 2.5vh;
+    height: 68vh;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 3vh;
+    border-radius: 1vh;
+}
+
+.logo1 {
+    justify-content: center;
+    align-items:center;
+    margin-left: 34vh;
+    margin-top: 2vh;
+    width: 40vh;
+    animation: myframes2 2.5s 0s
+}
+

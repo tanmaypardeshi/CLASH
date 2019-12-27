@@ -1,0 +1,344 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RC Question Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Codingpage.css' %}">
+    <script type="text/javascript">
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+      <script>
+        function preventBack(){window.history.forward();}
+        setTimeout("preventBack()", 0);
+        window.onunload = function(){null};
+    </script>
+     <script type="text/javascript" >
+       function preventBack(){
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload=function(){null};
+   </script>
+
+</head>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script>
+$(document).ready(function(){
+   var x = document.getElementById("attempt1");
+   var y = document.getElementById("attempt2");
+    if( {{profile.attempt_cntr}} == 2)
+    {
+        x.disabled = false;
+        y.disabled = true;
+        y.style.cursor = "not-allowed";
+    }
+    if( {{profile.attempt_cntr }} == 1)
+    {
+        var store = document.getElementById("attempt1").value;
+        x.placeholder=store;
+        x.style.border = '2px solid red';
+        x.disabled = true;
+        y.disabled = false;
+        x.style.cursor = "not-allowed";
+       }
+});
+
+</script>
+
+<form method="post">
+{% csrf_token %}
+    <body>
+    <input type="number" value="{{your_time}}" hidden id="time">
+        <div class="container-fluid">
+            <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+                <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                    <div class="col-lg-3" style=" height: 6vh; display:flex;align-items: center;justify-content: center;color: rgb(255, 255, 230);margin-right:55px;	">
+                        <img src="{% static 'images/RC.png' %} " height="55vh" width="80%">
+                    </div>
+                    <div class="col-lg-9" style=" height: 6vh; display:flex;align-items: center; justify-content: center;color: rgb(255, 255, 230)	;font-size: 3vh;"></div>
+                </div>
+                <div class="col-lg-2" style=" height: 7vh; display: flex; justify-content: center;align-items: center;color: rgb(255, 255, 230)	">
+
+                </div>
+                <div class="col-lg-5" style=" height: 7vh;">
+                    <div class="row">
+                        <div class="col-lg-5 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+
+                        </div>
+                        <div class="col-lg-4 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                               <button type="button" class="button" id="logout">Log Out</button>
+                            <div id="myModal2" class="modal">
+
+
+                                <div class="modal-content" style="width: 30%;height:20vh;">
+
+
+                                    <div class="row mt-3" id="modal-body" style="padding-left:6vw">
+
+                                        Do you want to logout?
+                                    </div>
+                                    <div class="row" id="modal-footer">
+                                            <div class="col-lg-1"></div>
+                                        <div class="col-lg-4">
+                                          <button  class="btn btn-danger" formaction="/question/logout/" formmethod="post" type="submit" style="font-size:15px ;width: 8vw;height: 5vh;margin-left:2vw">Yes</button>
+                                        </div>
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-4">
+                                        <button type="button" class="btn btn-primary close2" style="font-size:15px ;width: 8vw;height: 5vh;color:white;margin-right:2vw">Cancel</button>
+                                        </div>
+                                        <div class="col-lg-1"></div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <img src="{% static 'images/Ieee.png' %}" style="height: 5vh;margin-left:-20px;">
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row df" style="text-align:center;height:86vh;">
+
+                <div class="col-lg-2 b" style="   height: 86vh;background-color: #03030344;">
+
+                    <div class="row b df" style=" height: 24vh">
+                        <div class="col-lg-8 b" style="height: 15vh;">
+                            <div class="row timer" style="    color: white;margin-top: 3vh">
+                                <div class="col-lg-6" style="font-size: 5vh; height: 15vh; z-index: 0;border-right: 1px white solid;">
+                                    <div class="row" id="ar1" style="height: 2.5vh; background-color: rgb(255,255,230); opacity: 0.7;border-top-left-radius: 5px;	"></div>
+                                    <div class="row" id="ar2" style="height: 2.5vh; background-color: rgb(255,255,230) ;	 opacity: 0.7;"></div>
+                                    <div class="row" id="ar3" style="height: 2.5vh; background-color:  rgb(255,255,230); opacity: 0.7; 	"></div>
+                                    <div class="row" id="ar4" style="height: 2.5vh; background-color:  rgb(255,255,230) ; opacity: 0.7;	"></div>
+                                    <div class="row" id="ar5" style="height: 2.5vh; background-color:  rgb(255,255,230) ; opacity: 0.7;	"></div>
+                                    <div class="row" id="ar6" style="height: 2.5vh; background-color:  rgb(255,255,230) ; opacity: 0.7;	; border-bottom-left-radius: 5px; "></div>
+
+                                </div>
+                                <div class="col-lg-6" style="font-size: 5vh;   height: 15vh;z-index: 0;border-radius: 5px">
+                                    <div class="row" id="br1" style="height: 2.5vh; background-color:  rgb(255,255,230) 	; opacity: 0.7;border-top-right-radius: 5px;;"></div>
+                                    <div class="row" id="br2" style="height: 2.5vh; background-color:  rgb(255,255,230) 	; opacity: 0.7;"></div>
+                                    <div class="row" id="br3" style="height: 2.5vh; background-color:  rgb(255,255,230) 	; opacity: 0.7;"></div>
+                                    <div class="row" id="br4" style="height: 2.5vh; background-color:  rgb(255,255,230) ; opacity: 0.7;	"></div>
+                                    <div class="row" id="br5" style="height: 2.5vh; background-color:  rgb(255,255,230) 	; opacity: 0.7;"></div>
+                                    <div class="row" id="br6" style="height: 2.5vh; background-color:  rgb(255,255,230) ; opacity: 0.7;	; border-bottom-right-radius: 5px"></div>
+                                </div>
+                                <div style="background-color: transparent; z-index: 1; margin-left: 0.15vw; height: 15vh; width: 12.1vw;position: fixed; text-align: center;line-height: 15vh;justify-content: center">
+                                    <div class="row">
+                                        <div class="col-lg-6" id="min" style="font-size: 7vh;margin-left: 0.1vw;"></div>
+                                        <div class="col-lg-6" id="sec" style="font-size: 7vh;margin-left: -1.4vw"></div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row b df" style="  height: 31vh;">
+                        <a>
+                            <div class="folder" id="hints">
+                                <div class="front">
+                                    Hints
+                                </div>
+                                <div class="back"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row b df" style="  height: 31vh;">
+                        <a>
+                            <div class="folder2" id="instr">
+                                <div class="front2">
+                                    Instructions
+                                </div>
+                                <div class="back2"></div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div id="myModal" class="mod">
+
+
+                        <div class="modal-content" style="width: 60%;height:80vh;margin-top:-5vh">
+                            <div class="row" id="modal-header">
+                                <div class="col-lg-11">
+                                    <h1>Hints</h1>
+                                </div>
+                                <div class="col-lg-1">
+                                    <span class="close">&times;</span>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row mt-3" id="modal-body" style="padding:1vw;overflow:scroll;overflow-x:hidden;height:75vh;text-align:left" scrollbar-width="none">1) PERFECT NUMBER is a positive integer that is equal to the sum of its proper divisors.The smallest perfect number is 6,which is the sum of 1,2 and 3.<br><br>
+                                2) A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.<br><br>
+                                3) FIBONACCI NUMBERS is a series of numbers in which each number (Fibonacci Number) is the sum of the two preceding numbers.The Simplest Form is the series 0 , 1 , 1 , 2 , 3 , 5 , 8 , ....<br><br>
+                                4) PASCAL'S Triangle is a triangle which is denoted as follows:<br>
+                                <div style="text-align:center">
+                                1 <br>
+                                1 1<br>
+1 2 1<br>
+1 3 3 1<br>
+                                </div>
+<br>
+5) A PALINDROMIC NUMBER or NUMERAL PALINDROME is a number that remains the same when its digits are reverse.Like 16461, for example, it is "symmetrical".<br><br>
+6) AMICABLE NUMBER:A pair of numbers,each of which is the sum of the factors of the other. (e.g. 220 & 284.)<br><br>
+7)Armstrong number:A n number n is called armstrong number if the sum of the cube of its individual digits is equal to the number itself.eg:153 :1^3+5^3+3^3=153<br><br>
+8)A Harshad number is a number that is divisible by the sum of its own digits.For example, 1729 is a Harshad number because 1 + 7 + 2 + 9 = 19 and 1729 = 19 × 91<br><br>
+9)A number is called curious if it is equal to the sum of factorials of its digits.For example,145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.<br><br>
+
+                            </div>
+                            <div class="row" id="modal-footer">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                  <div id="myModal1" class="mod">
+
+
+                        <div class="modal-content" style="width: 60%;">
+                            <div class="row" id="modal-header">
+                                <div class="col-lg-11">
+                                    <h1>Instructions</h1>
+                                </div>
+                                <div class="col-lg-1">
+                                    <span class="close4">&times;</span>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row mt-3" id="modal-body" style="padding-left:2vw;text-align:left">
+                                1.The competition is of 28 minutes. <br>
+
+2.The question put in front of you has only ONE INTEGER answer. <br>
+
+3.You will only proceed if you attempt the question. <br>
+
+4.You will have 2 attempts to answer the question. <br>
+
+5.The attempts will carry marks given in the marking scheme ie, the first attempt will have a marking scheme of +4,0.And the second attempt has a marking scheme of +2,-1.<br>
+
+6.You can log out of the competition any time you want through the LOGOUT button.<br>
+                            </div>
+                            <div class="row" id="modal-footer">
+
+                            </div>
+                        </div>
+
+                    </div>-->
+                </div>
+
+                <div class="col-lg-8 b" style=" height: 86vh;box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5), 0 10px 30px 0 rgba(0, 0, 0, 0.49);">
+                    <div class="row df">
+                        <div class="col-lg-12">
+                            <div class="row b" style="height: 61vh; display: flex;
+                                    justify-content: center; ">
+                                <div class="col-lg-12 mt-1">
+                                    <div class="row df q" style="height: 5vh;">
+
+                                    </div>
+                                    <div class="row df">
+                                        <textarea disabled class="t1" style="text-align: left">  {{question.question}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="margin-top: 1vh">
+                                    <div class="row" style="height: 2vh;"></div>
+
+                                    <div class="row" style="height: 13vh;border: 0px solid white;">
+
+                                        <div class="col-lg-6" id="invalidtxt">
+                                            <p>Invalid Input!</p>
+                                        </div>
+                                        <div class="col-lg-6" id="invalidtxt2">
+                                            <p>Invalid Input!</p>
+                                        </div>
+                                        <div class="col-lg-6 b df" id="ddd" style="margin-bottom: 15px;">
+                                            <input type="text" class="att1" maxlength="18" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="ATTEMPT 1" id="attempt1" name="attempt1" value="{{answer}}" autocomplete="off">
+                                        </div>
+                                        <div class="col-lg-6 b df" id="ccc" style="margin-bottom: 15px;">
+                                            <input type="text" placeholder="ATTEMPT 2" maxlength="18" class="att2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="attempt2" name="attempt2" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="row df">
+                                        <div class="col mt-2" style="display:flex; justify-content: center;text-align: center;">
+                                            <button type="submit" class="btn btn-block zz" id="submit"  formaction="/answer/{{question.id}}/" onclick="sb()">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 b" style=" height: 86vh;background-color: #03030344;">
+                    <div class="row b df" style=" height: 30vh;">
+                        <div class="col-lg-9 b" style="height: 20vh;margin-bottom: 3vh">
+                            <div class="row b df op mt-3" style="height: 7vh;padding-top: 15px;background-color: rgb(255,255,230);">
+                                <p class="ms">SCORE</p>
+                            </div>
+                            <div class="row b df" style="height: 13vh;">
+                                <div class="col-lg-12 " style="color: rgb(255, 255, 230)	;font-size: 60px;border: 0px solid rgb(255, 255, 230)	;border-radius: 5px;background-color: rgba(240, 255, 255, 0.137)">
+                                    {{profile.score}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row b df" style=" height: 24vh;">
+                        <div class="col-lg-9 b ms mt-4" style="height: 26vh;border: none;">
+                            <div class="row b df op" style="height: 8vh;padding-top: 15px;border: none;background-color: rgb(255,255,230);">
+                                <p class="ms">MARKING SCHEME</p>
+                            </div>
+                            <div class="row b" style="height: 18vh;border: none;">
+                                <p class="col-lg-5 mr-2 ml-2 fillg" style="margin-top:12px">
+                                   +{{profile.incr}}
+                                </p>
+                                <p class="col-lg-5 ml-1 fillr" style="margin-top:12px">
+                                    {{profile.decr}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row b " style=" height: 28vh ;display: flex;justify-content: center">
+                        <div class="col-lg-9 mt-4 b" style="height: 20vh;">
+                            <div class="row b df op" style="height: 7vh;background-color: rgb(255,255,230);">
+                                <p class="ms2" style="font-size: 15px">QUESTIONS ATTEMPTED</p>
+                            </div>
+                            <div class="row b df" style="height: 13vh;">
+                                <div class="col-lg-12" style="color: rgb(255, 255, 230)	;font-size: 60px;border: 0px solid rgb(255, 255, 230)	;border-radius: 5px;background-color: rgba(240, 255, 255, 0.137)">
+                                    {{profile.attempted}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 4vh;"></div>
+                </div>
+
+            </div>
+            <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+                <div class="col-lg-12 footer" >
+                                &copy PICT IEEE STUDENT BRANCH
+                            </div>
+            </div>
+        </div>
+        <script src="{% static 'js/fold.js' %}"></script>
+    </body>
+</form>
+
+</html>

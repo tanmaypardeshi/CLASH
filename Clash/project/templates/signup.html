@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+</head>
+<form action="" method="post">
+    {% csrf_token %}
+<body style="background-image:url(/static/images/bg3.jpg);overflow:hidden">
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+            <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                <div class="col-lg-3" style=" height: 6vh; display:flex;align-items: center;justify-content: center;color: #d7e9f8"><img src="{% static 'images/clash.png' %}" height="100%" width="62%"></div>
+                <div class="col-lg-9" id="Lg"></div>
+            </div>
+            <div class="col-lg-2" style=" height: 7vh; display: flex; justify-content: center;align-items: center;color: #d7e9f8">
+
+            </div>
+            <div class="col-lg-5" style=" height: 7vh;">
+                <div class="row">
+                    <div class="col-lg-5 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+
+                    </div>
+                    <div class="col-lg-4 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+
+
+                    </div>
+                    <div class="col-lg-3 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <img src="{% static 'images/pisb_color.png' %}" style="height: 5vh;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="row" style="text-align:center;height:86vh;">
+        <div class="col-lg-9" >
+            <div class="row main" style=" margin-left: 40px;">
+                <div class="bottom" id="bot1" >
+
+            <div class="row bot1" >REGISTER</div>
+            <br>
+            <br>
+            <div class="block"style="justify-content:center;">
+
+                    <div class="inputBox">
+                            <img src="{% static 'images/team1.png' %}" class="iconimg" >
+                            <input type="text" placeholder="Team Name" name="uname" id="id_username" required autocomplete="off" >
+
+                        </div>
+                        <div class="inputBox">
+                                <img src="{% static 'images/password1.png' %}" class="iconimg" >
+                                <input type="password" placeholder="Enter Password" name="pass" required autocomplete="off" >
+
+                            </div>
+                <div id="radios" style="margin-right: 1vw; margin-left:0vw;">
+                        <label for="input1" style="margin-right:3vw ;" ></label>
+                        <input type="radio" id="input1" name="year" value="3" checked>
+
+                        <label for="input1" style="margin-right:1.25vw ;" >FE</label>
+
+
+
+                            <input type="radio" id="input2" name="year" value="0">
+                            <label for="input1" style="margin-right:1.25vw ;" >SE</label>
+
+                                <input type="radio" id="input3" name="year" value="1">
+
+                                <label for="input1" style="margin-right:1.25vw ;" >TE</label>
+
+                        <input type="radio" id="input4" name="year" value="1">
+                        <label for="input4" style="margin-right: 1.25vw" >BE</label>
+
+                    <span id="slider"></span>
+                </div>
+
+                <div style="text-align: center; padding-top: 2vh;margin-top:20px ">
+                    <button type="submit" class="btl" name="signup" id="loginbtn" value="Signup">LOGIN</button>
+                </div>
+
+            </div>
+    </div>
+    <div class="left" id="left1">
+        <div class="row bot" >PLAYER 1</div>
+        <br>
+
+
+        <div class="block"style="justify-content:center;text-align:center;">
+
+                <div class="inputBox">
+
+
+                    <img src="{% static 'images/icon1.png' %}" class="iconimg" >
+                         <input type="text" placeholder="Enter Name"name="p1_name" required oninvalid="this.setCustomValidity('Enter Valid Username !')" oninput ="this.setCustomValidity('')" autocomplete="off" class="inptyp">
+
+
+                    </div>
+
+
+
+        <div class="inputBox">
+                <img src="{% static 'images/phone1.png' %}"  class="ph">
+
+                <input type="tel" placeholder="Enter Contact"name="mob1"  pattern="[6-9]{1}[0-9]{9}"maxlength="10" required oninvalid="this.setCustomValidity('Enter Valid Contact-Number !')" oninput ="this.setCustomValidity('')" autocomplete="off" class="inptyp" >
+
+            </div>
+
+
+            <div class="inputBox">
+                    <img src="{% static 'images/email1.png' %}" class="em">
+                <input type="email" placeholder="Enter Email" name="p1_email" required id="e1" autocomplete="off" class="inptyp" onblur="validateEmail1(this);">
+
+                </div>
+    </div>
+    </div>
+    <div class="right" id="right1">
+            <div class="row bot">PLAYER 2</div>
+            <br>
+
+
+            <div class="block"style="justify-content:center">
+
+                    <div class="inputBox">
+                        <img src="{% static 'images/icon1.png' %}" class="iconimg" >
+                            <input type="text" placeholder="Enter Name"name="p2_name"  oninvalid="this.setCustomValidity('Enter Valid Username !')" oninput ="this.setCustomValidity('')" autocomplete="off" class="inptyp">
+
+                        </div>
+
+
+
+            <div class="inputBox">
+                <img src="{% static 'images/phone1.png' %}" class="ph">
+                    <input type="tel" placeholder="Enter Contact" name="mob2"  pattern="[6-9]{1}[0-9]{9}" maxlength="10" oninvalid="this.setCustomValidity('Enter Valid Contact-Number !')" oninput="this.setCustomValidity('')"  autocomplete="off" class="inptyp">
+
+                </div>
+
+
+                <div class="inputBox">
+                    <img src="{% static 'images/email1.png' %}" class="em">
+                        <input type="email" placeholder="Enter Email" name="p2_email"  id="e2" autocomplete="off" class="inptyp" onblur="validateEmail2(this);">
+
+                    </div>
+                    <button type="button" class="button" id="next" onclick="f()" ><span id="sp">NEXT</span></button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-3" >
+        <img src="{% static 'images/Cred.png' %}" style="height:60vh;width:20vw;margin:13vh 2.5vw 13vh 0vw;">
+        </div>
+    </div>
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+            <div class="col-lg-12 footer" >
+                &copy PICT IEEE STUDENT BRANCH
+            </div>
+        </div>
+        </div>
+
+            </body>
+        </form>
+            <script>
+                    var div1= document.getElementById('left1');
+                    var div2= document.getElementById('right1');
+                    var div3=document.getElementById('bot1');
+                    var btn=document.getElementById('next');
+                    var btn1=document.getElementById('sp');
+
+                    function f() {
+                        div1.classList.add("a1");
+                        div2.classList.add("a2");
+                        div3.style.opacity='1';
+                        btn1.classList.add("a");
+                       div3.classList.add("a3");
+                        btn.disabled=true;
+                        btn.style.opacity= '0'
+
+                    }
+                    var a=document.getElementById('e1');
+                    var b=document.getElementById('e2');
+                    function validateEmail1(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false && a.value!=null)
+        {
+            a.setCustomValidity('Enter Valid Email ID !');
+            return false;
+        }
+        a.setCustomValidity('');
+        return true;
+
+}
+function validateEmail2(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false && b.value!=null)
+        {
+            b.setCustomValidity('Enter Valid Email ID !');
+            return false;
+        }
+        b.setCustomValidity('');
+        return true;
+
+}
+                </script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+{% block javascript %}
+    <script type="text/javascript">
+    $("#id_username").keyup(function () {
+      var username = $(this).val();
+$.ajax({
+        url: '/ajax/validate_username/',
+        data: {
+          'username': username
+        },
+        dataType: 'json',
+        success: function (data) {
+         if (data.is_taken) {
+         document.getElementById("loginbtn").disabled=true;
+            document.getElementById("id_username").style = "border : 2px solid red";
+
+          }else {
+            document.getElementById("loginbtn").disabled=false;
+            document.getElementById("id_username").style = "border : 2px solid green";
+            }
+        }
+      });
+    });
+  </script>
+{% endblock %}
+</html>

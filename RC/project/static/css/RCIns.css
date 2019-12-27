@@ -1,0 +1,122 @@
+@font-face{
+    font-family: mplus;
+    src: url(mplus.ttf);
+}
+
+body{
+    background: url(bg-black.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: mplus;
+    overflow-y: hidden;
+    color: rgb(255,255,230);
+}
+.button{
+    width:70%;
+    background-color:rgb(253, 30, 30);
+    color: white;
+    border-radius: 5px;
+    border:none;
+    height: 5vh;
+    outline: none;
+}
+.button:hover{
+    background-color:rgba(255, 47, 47, 0.993);
+}
+.main{
+    text-align: center;
+    height: 86vh;
+    position: relative;
+    z-index: 0;
+    /*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+}
+.bottom{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    /*
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.623);
+    */
+    box-shadow: 0 0 30px rgba(0,0,0,1);
+-moz-box-shadow: 0 0 30px rgba(0,0,0,1);
+-webkit-box-shadow: 0 0 30px rgba(0,0,0,1);
+-o-box-shadow: 0 0 30px rgba(0,0,0,1);
+    width: 65vw;
+    height: 62vh;
+    margin: 10.5vh 17.5vw 10.5vh 17.5vw;
+    border-radius: 15px;
+  
+}
+.top{
+    position: absolute;
+    z-index: 1;
+   /*  background-color: #22686a; */
+    background-color: #0e0d0d;
+    width: 65vw;
+    height: 62vh;
+    margin: 10.5vh 17.5vw 10.5vh 17.5vw;
+    color: white;
+    border-radius: 15px;
+    animation: slider 1.5s ease-in-out forwards;
+}
+@keyframes slider{
+    0%{
+        height: 62vh;
+    }
+    100%{
+        height: 0;
+    }
+}
+.istrh{
+    font-weight: bold;
+    text-align: center; padding-top: 5vh;
+}
+.instr{
+    text-align: left; margin-top: 3vh; padding-left: 2vw; padding-right: 2vw;
+}
+.bt1, .bt2, .istrb{
+    background-color: rgba(139, 129, 129, 0.97);
+    color: white;
+}
+.btn11{
+    border:none;
+    /*rgba(110, 142, 179, 0.808);*/
+    height: 6vh;
+    font-size: 17px;
+    width: 8vw;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    /*background-color: rgba(109, 131, 156, 0.808);*/
+    background-color: rgb(212, 203, 203);
+    color: black;
+    border: 1px solid white;
+    
+    cursor: pointer;
+}
+.btn11:hover   {
+    /*background-color: rgba(109, 131, 156, 0.808);
+    background-color: rgb(150, 148, 148);
+    */
+    color: black;
+   
+    transform: translate3d(0,-1px,0);
+    box-shadow: 0px 3px 2px 0px;
+   
+}
+.footer{
+     font-family: 'M PLUS 1p', sans-serif;
+    border: 2px solid black;
+    height:7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8f7ee;
+    font-size: 18px;
+}
+

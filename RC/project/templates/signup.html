@@ -1,0 +1,255 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" xmlns:background-image="http://www.w3.org/1999/xhtml">
+<head>
+  <title>RC Login Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/rclogin.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+</head>
+
+<form method="post" action="">
+    {% csrf_token %}
+
+<body style="background-image:url(/static/images/black.jpeg);overflow:hidden">
+
+
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+            <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                <div class="col-lg-3" style=" height: 6vh; display:flex;align-items:center;justify-content: center;color: #d7e9f8;margin-right:55px;"><img src="{% static 'images/RC.png' %}"height="55vh"width="80%"></div>
+                <div class="col-lg-9" id="Lg" ></div>
+            </div>
+            <div class="col-lg-2" style=" height: 7vh; display: flex; justify-content: center;align-items: center;color: #d7e9f8">
+                
+            </div>
+            <div class="col-lg-5" style=" height: 7vh;">
+                <div class="row">
+                    <div class="col-lg-5 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        
+                    </div>
+                    <div class="col-lg-4 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        
+                    
+                    </div>
+                    <div class="col-lg-3 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <img src="{% static 'images/Ieee.png' %}" style="height: 5vh;margin-left:-20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+                    <div class="row" style="text-align:center;height:86vh;z-index: 0;position: relative;">
+                        <div class="left">
+                <div class="row bot" >PLAYER 1</div>
+                        <br>
+                        <div class="block"style="justify-content:center;text-align:center;">
+
+                                <div class="inputBox">
+                                    <input type="text" maxlength="32" placeholder="Enter Name"name="p1_name" required autocomplete="off" class="inptyp" id="name1" onclick="nm1c()">
+
+
+                                    </div>
+
+                        <div class="inputBox">
+
+                                <input type="tel" placeholder="Enter Contact"name="mob1" id="contact1" pattern="[6-9]{1}[0-9]{9}"maxlength="10" required autocomplete="off" class="inptyp" oninvalid="this.setCustomValidity('Enter Valid Contact Number!')" oninput="this.setCustomValidity('')" onclick="cn1c()" >
+
+                            </div>
+
+
+                            <div class="inputBox">
+                                <input type="email" placeholder="Enter Email" name="p1_email" id="email1" required autocomplete="off" class="inptyp"  onblur="validateEmail1(this);" onclick="em1c()">
+
+                                </div>
+                    </div>
+            </div>
+            <div class="middle">
+                <div class="row bot1" >REGISTER</div>
+
+                            <br>
+                            <div class="block"style="justify-content:center;">
+
+                                    <div class="inputBox">
+                                            <input type="text"  maxlength="32" placeholder="Team Name" name="uname" id="id_username" required autocomplete="off" onclick="tmn1c()" minlength="3" >
+                                        <p id="font" > </p>
+                                        </div>
+                                        <div class="inputBox">
+                                                <input type="password" placeholder="Enter Password" name="pass" id="psw" required autocomplete="off" onclick="psw1c()" >
+
+                                            </div>
+                                <div id="radios" style="margin-right: 1vw; margin-left:0vw;margin-top:-5px">
+                                        <label for="input1" style="margin-right:3vw ;" ></label>
+                                        <input type="radio" id="input1" name="level" value="0" checked>
+
+                                        <label for="input1" style="margin-right:1.25vw ;color:rgb(255,255,250)" >FE</label>
+
+
+
+                                            <input type="radio" id="input2" name="level" value="1">
+                                            <label for="input1" style="margin-right:1.25vw ;color:rgb(255,255,250)" >SE</label>
+
+
+
+
+                                                <input type="radio" id="input3" name="level" value="1" >
+
+                                                <label for="input1" style="margin-right:1.25vw ;color:rgb(255,255,250)" >TE</label>
+
+                                        <input type="radio" id="input4" name="level" value="1">
+                                        <label for="input4" style="margin-right: 1.25vw;color:rgb(255,255,250)" >BE</label>
+                                    <span id="slider"></span>
+                                </div>
+
+                                <div style="text-align: center; padding-top: 2vh;margin-top:10px ">
+                                    <button type="submit" id="loginbtn" formaction="/" class="btl">LOGIN</button>
+                                </div>
+
+                            </div>
+            </div>
+            <div class="right">
+                <div class="row bot">PLAYER 2</div>
+                            <br>
+
+                            <div class="block"style="justify-content:center">
+
+                                    <div class="inputBox">
+                                            <input type="text" maxlength="32" placeholder="Enter Name"name="p2_name"  autocomplete="off" class="inptyp" id="name2" onclick="nm2c()">
+
+                                        </div>
+
+                            <div class="inputBox">
+                                    <input type="tel" placeholder="Enter Contact"name="mob2" id="contact2" pattern="[6-9]{1}[0-9]{9}"maxlength="10"  autocomplete="off" class="inptyp" oninvalid="this.setCustomValidity('Enter Valid Contact Number!')" oninput="this.setCustomValidity('')" onclick="cn2c()">
+
+                                </div>
+
+
+                                <div class="inputBox">
+                                        <input type="email"  placeholder="Enter Email"  id="email2" name="p2_email"  autocomplete="off" class="inptyp" onblur="validateEmail2(this);" onclick="em2c()" >
+
+                                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+                        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+                            <div class="col-lg-12 footer" >
+                                &copy PICT IEEE STUDENT BRANCH
+                            </div>
+                        </div>
+                        </div>
+
+            </body>
+</form>
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+{% block javascript %}
+    <script type="text/javascript">
+    $("#id_username").keyup(function () {
+      var username = $(this).val();
+$.ajax({
+        url: '/ajax/validate_username/',
+        data: {
+          'username': username
+        },
+        dataType: 'json',
+        success: function (data) {
+         if (data.is_taken) {
+
+               document.getElementById("loginbtn").disabled = true;
+               $("#font").text("Username taken!");
+                document.getElementById("font").style = "color : #ff0200";
+          }else{
+
+                           document.getElementById("loginbtn").disabled = false;
+                       $("#font").text("Username available!");
+                       document.getElementById("font").style = "color : #00ff00";
+            }
+
+        }
+      });
+    });
+  </script>
+<script>
+    var a1=document.getElementById('name1');
+    var c1=document.getElementById('email1');
+    var b1=document.getElementById('contact1');
+    var a2=document.getElementById('name2');
+    var c2=document.getElementById('email2');
+    var b2=document.getElementById('contact2');
+    var d1=document.getElementById('id_username');
+    var d2=document.getElementById('psw');
+    function validateEmail1(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false && c1.value!=null)
+        {
+            c1.setCustomValidity('Enter Valid Email ID !');
+            return false;
+        }
+        else{
+            c1.setCustomValidity('');
+        return true;
+}
+}
+function validateEmail2(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false && c2.value!=null)
+        {
+            c2.setCustomValidity('Enter Valid Email ID !');
+            return false;
+        }
+        else{
+            c2.setCustomValidity('');
+        return true;
+}
+}
+    function nm1c(){
+    a1.style.borderBottom= " 1.5px solid  #F1F1F1";
+    a1.style.width= "17vw";
+    a1.style.transition=" 0.2s";
+    }
+    function nm2c(){
+    a2.style.borderBottom= " 1.5px solid #F1F1F1";
+    a2.style.width= "17vw";
+    a2.style.transition=" 0.2s";
+    }
+    function cn1c(){
+    b1.style.borderBottom= " 1.5px solid #F1F1F1";
+    b1.style.width= "17vw";
+    b1.style.transition=" 0.2s";
+    }
+    function cn2c(){
+    b2.style.borderBottom= " 1.5px solid #F1F1F1";
+    b2.style.width= "17vw";
+    b2.style.transition=" 0.2s";
+    }
+    function em1c(){
+    c1.style.borderBottom= " 1.5px solid #F1F1F1";
+    c1.style.width= "17vw";
+    c1.style.transition=" 0.2s";
+    }
+    function em2c(){
+    c2.style.borderBottom= " 1.5px solid #F1F1F1";
+    c2.style.width= "17vw";
+    c2.style.transition=" 0.2s";
+    }
+    function tmn1c(){
+    d1.style.borderBottom= " 1.5px solid #F1F1F1";
+    d1.style.width= "17vw";
+    d1.style.transition=" 0.2s";
+    }
+    function psw1c(){
+    d2.style.borderBottom= " 1.5px solid #F1F1F1";
+    d2.style.width= "17vw";
+    d2.style.transition=" 0.2s";
+    }
+
+</script>
+{% endblock %}
+
+</html>

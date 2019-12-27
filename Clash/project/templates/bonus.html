@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>coding page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bonus.css' %}">
+</head>
+<form>
+    {% csrf_token %}
+<body style="background-image:url(/static/images/bg3.jpg);overflow:hidden">
+    <input type="number" value="{{ now }}" id="bon_time" hidden>
+      <div class="container-fluid">
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;display:flex;align-items: center">
+            <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                <div class="col-lg-3" style=" height: 7vh; display:flex;align-items: center;justify-content: center;"><img src="{% static 'images/clash.png' %}"height="55vh"width="80%"></div>
+                <div class="col-lg-9" style=" height: 7vh; display:flex;align-items: center; justify-content: center;">
+                    <div class="row" style="height:6vh;">
+                        <div class="col-lg-12" id="mark" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2" id="timer" ><div id="time1"></div><div id="colon">:</div><div id="time2"></div>
+            </div>
+            <div class="col-lg-3" style=" height: 7vh;display:flex;align-items: center;">
+            </div>
+            <div class="col-lg-2 " style=" height: 6vh; display: flex;align-items: center;">
+                    <img src="{% static 'images/IEEE_logo.png' %}" style="height: 6vh;margin-left:70px">
+                </div>
+    </div>
+    
+        
+                    <div class="row"style="text-align:center;height:86vh;">
+                        <div class="col-lg-3"  >
+                            <div class="col-lg-12" style="height:2vh"></div>
+                            <div class="col-lg-11 sidebar"  >
+                               
+                            <div class="row " >
+                                    <div class="col-lg-12 mt-4" style="color:rgb(192, 236, 247)">
+                                        <h4>MARKING SCHEME</h4></div>
+                            </div>
+                            <div class="row mt-2" style="display:flex;justify-content:center;">
+                                    <div class ="col-lg-7" id="dynamicscore"><h1 id="num"></h1></div>
+                                </div>
+
+                            </div>
+                            </div>
+                        
+                           
+                        <div class="col-lg-9" style="margin-left:-2vh;" >
+                            <div class="row" style="height:58vh;display:flex;align-items:center;justify-content: center;">
+                                <div class="col-lg-12" style="height:2vh"></div>
+                                <div class="col-lg-11"  style="border: 0px solid black;height:56vh;">
+                                    <div class="col-lg-12 scroller" id="ques">
+                                        <textarea style="resize:none" id="question" readonly>{{question.question}}
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="height:24vh">
+                                <div class="col-lg-6" >
+                                    <div class="row">
+                                  <div class="col-lg-2" style="height:27vh"></div>
+                                  <div class="col-lg-8" style="height:27vh">
+                                      <div class="row">
+                                      <div class="col-lg-12" id="a"style="border-right:2px solid black;height:5vh"></div>
+                                      </div>
+                                      <div class="row" style="height:9vh;">
+                                            <div class="col-lg-2" ></div>
+                                            <div class="col-lg-8 scroller op"  onmouseover="mouseOver(this.id);"  onmouseout="mouseOut(this.id);"onclick="select('a')">
+                                                <input type="radio" class="scroller"name="option" value="1" id="o1"  >
+                                                <label for="o1" >{{ question.option1 }}</label>
+                                                 </div>
+                                      <div class="col-lg-2" id= "a2"style="height:3.5vh;border-bottom:2px solid black;border-right:2px solid black;border-bottom-right-radius:5px"></div>
+                                    </div>
+                                      <div class="row">  
+                                      <div class="col-lg-2"></div>
+                                      <div class="col-lg-8 scroller op"   onmouseover="mouseOver(this.id);"  onmouseout="mouseOut(this.id);" onclick="select('c')">
+                                        <input type="radio"   name="option" value="3" id="o3"  >
+                                        <label for="o3" >{{ question.option3 }}</label>
+                                         </div>
+                                      <div class="col-lg-2"id="c1" style="height:3.5vh;border-bottom:2px solid black;"></div>
+                                </div>
+                                </div>
+                                  <div class="col-lg-2" style="height:27vh">
+                                      <div class="row">
+                                        <div class="col-lg-6" id="c2"style="border-right:2px solid black;height:17.5vh;border-bottom:2px solid black;border-bottom-right-radius:5px"></div>
+                                        </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                <div class="col-lg-6" >
+                                    <div class="row">
+                                        <div class="col-lg-2" style="height:27vh">
+                                            <div class="row">
+                                            <div class="col-lg-6" ></div>
+                                            <div class="col-lg-6" id="d1"style="border-left:2px solid black;height:17.5vh;border-bottom:2px solid black;border-bottom-left-radius:5px"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8" style="height:27vh">
+                                                <div class="row">
+                                                <div class="col-lg-6" id="b"style="border-left:2px solid black;height:5vh"></div>
+                                                 </div>
+                                                <div class="row" style="height:9vh">
+                                                      <div class="col-lg-2"id="b2"style="height:3.5vh;border-bottom:2px solid black;border-left:2px solid black;border-bottom-left-radius:5px"></div>
+                                                      <div class="col-lg-8 scroller op"   onmouseover="mouseOver(this.id);"  onmouseout="mouseOut(this.id);" onclick="select('b')" >
+                                                      <input type="radio" name="option" value="2" id="o2"  >
+                                                      <label for="o2" >{{question.option2}} </label>
+                                                       </div>
+                                                      <div class="col-lg-2"></div>  
+                                              </div>
+                                                <div class="row">  
+                                                <div class="col-lg-2"id="d2" style="height:3.5vh;border-bottom:2px solid black"></div>
+                                                <div class="col-lg-8 scroller op"   onmouseover="mouseOver(this.id);"  onmouseout="mouseOut(this.id);" onclick="select('d')">
+                                                    <input type="radio" name="option" value="4" id="o4"  >
+                                                    <label for="o4" >{{ question.option4 }}</label>
+                                                     </div>
+                                                <div class="col-lg-2"></div>
+                                          </div>
+                                          </div>
+                                            <div class="col-lg-2" style="height:27vh">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row " style="height:5vh;margin-top:-2vh" >
+                                <div class="col-lg-5"></div>
+                                <div class="col-lg-2" >
+                                    <button type="submit" id="sbmt" onclick="mksch()" formmethod="post" formaction="{% url 'bon_ans' bqno=question.id %}">SUBMIT</button>
+                                </div>
+                                <div class="col-lg-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+                            <div class="col-lg-12" style="font-size:18px;border: 2px solid black;height:7vh;display: flex;justify-content: center;align-items: center;color: #d7e9f8">
+                                &copy PICT IEEE STUDENT BRANCH
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <script src="jquery.js"></script>
+                        <script src="bootstrap.js"></script>
+                        <script>
+
+                        function startTimer(duration, display1,display2) {
+    var timer = duration;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display1.textContent = minutes; 
+        display2.textContent = seconds;
+        if (--timer < 0) {
+            document.getElementById("time1").textContent="00";
+            document.getElementById("time2").textContent="00";
+            window.location.href = "{% url 'login_logout' %}";
+            timer = duration;
+           
+        }
+        if(timer > 120)
+            var number=32;
+        if(timer < 120 && timer >= 110)
+            var number = 16;
+        if(timer < 110 && timer >= 100)
+            var number = 8;
+        if(timer < 100 && timer >= 90)
+            var number = 4;
+        if(timer < 90 && timer >= 80)
+            var number = 2;
+        if(timer < 80 && timer >= 70)
+            var number = 1;
+        if(timer < 70 && timer >= 60)
+            var number = 0;
+        if(timer < 60 && timer >= 50)
+            var number = -1;
+        if(timer < 50 && timer >= 40)
+            var number = -2;
+        if(timer < 40 && timer >= 30)
+            var number = -4;
+        if(timer < 30 && timer >= 20)
+            var number = -8;
+        if(timer < 20 && timer >= 10)
+            var number = -16;
+        if(timer < 10 && timer >= 0)
+            var number = -32;
+        document.getElementById("num").innerHTML=number;
+
+
+            if(number>0)
+            {
+                document.getElementById("num").style.color="rgb(104, 251, 104)";
+                document.getElementById("dynamicscore").style.borderColor="rgb(104, 251, 104)";
+            }
+            else if(number==0)
+                number=-1;
+            else
+            {
+
+                document.getElementById("num").style.color="rgb(250, 105, 105)";
+                document.getElementById("dynamicscore").style.borderColor="rgb(250, 105, 105)";
+            }
+            if(number==.5)
+                number=0;
+    }, 1000);
+}
+
+window.onload = function () {
+    var Minutes = document.getElementById("bon_time").value,
+        display1 = document.getElementById("time1"),
+        display2 =document.getElementById("time2");
+    startTimer(Minutes, display1,display2);
+};</script>
+            </body>
+        </form>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>This is the bonus question page</p>
+<form method="post">
+    {%csrf_token%}
+        <p style="color: black" id="demo"></p>
+    {{ question.question }}
+    <table>
+        <tr>
+            <td><input type="radio" name="options" value="{{question.option1}}" ></td><td>{{ question.option1 }}
+            <td><input type="radio" name="options" value="{{question.option2}}" ></td><td>{{ question.option2 }}
+            <td><input type="radio" name="options" value="{{question.option3}}" ></td><td>{{ question.option3 }}
+            <td><input type="radio" name="options" value="{{question.option4}}" ></td><td>{{ question.option4 }}
+        </td></tr>
+        <tr><td>Score</td>
+        <td>:</td>
+            <td>{{ score }}</td></tr></table>
+    <button type="submit" formaction="bonusanswer/{{ question.id }}/">Submit your response</button>
+    <button type="submit" name="logout" formaction="logout/">Exit</button><br>
+<!--    <li><a href='/question/gotobonus/'>page for bonus question</a></li>
+!-->
+
+
+</form>
+</body>
+
+<script>
+        // Set the date we're counting down to
+    var countDownDate = new Date("Aug 30, 2019 18:45:55").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+            minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 1) {
+            clearInterval(x);
+            window.location.href="http://127.0.0.1:8000/question/logout/";
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+</html>

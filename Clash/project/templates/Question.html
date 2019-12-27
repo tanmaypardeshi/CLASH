@@ -1,0 +1,472 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coding Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/round1code.css' %}">
+
+     <script type="text/javascript">
+
+        function preventBack(){window.history.forward();}
+        setTimeout("preventBack()", 0);
+        window.onunload = function(){null};
+    </script>
+        </script>
+     <script type="text/javascript" >
+       function preventBack(){
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload=function(){null};
+        window.onload = function(){
+        document.onkeydown = function (e) {
+            return (e.which || e.keyCode) != 82;
+        };
+        }
+    </script>
+
+</head>
+<form method="post">
+    {% csrf_token %}
+<body style="background-image:url(/static/images/bg3.jpg);overflow:hidden">
+<input type="number" id="time" value="{{ your_time }}" hidden>
+<input type="number" id="endian_counter" value="{{ profile.endian_counter }}" hidden>
+<input type="number" id="user_score" value="{{ profile.score }}" hidden>
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;display:flex;align-items: center">
+            <div class="col-lg-5" style="height: 7vh;display: flex; justify-content: center;align-items: center;">
+                <div class="col-lg-3" style=" height: 7vh; display:flex;align-items: center;justify-content: center;"><img src="{% static 'images/clash.png' %}"height="100%"width="62%"></div>
+                <div class="col-lg-9" style=" height: 7vh; display:flex;align-items: center; justify-content: center;">
+                    <div class="row" style="height:6vh;">
+                        <div class="col-lg-8" id="mark" >MARKING SCHEME</div>
+                        <div class="col-lg-2" id="plus">+{{ profile.incr }}</div>
+                        <div class="col-lg-2" id="minus">-{{ profile.decr }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2" id="timer" ><div id="time1"></div><div id="colon">:</div><div id="time2"></div>
+            </div>
+            <div class="col-lg-5" style=" height: 7vh;display:flex;align-items: center;justify-content:center">
+                <div class="row">
+                    <div class="col-lg-5" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <button type="button" id="ins" data-toggle="modal" data-target="#myModal">INSTRUCTIONS</button>
+
+                                 <!-- Modal -->
+                                     <div id="myModal" class="modal fade" role="dialog">
+                                      <div class="modal-dialog modal-lg">
+
+                                         <!-- Modal content-->
+                                  <div class="modal-content" style="height:70vh">
+                                    <div class="modal-header">
+                                              <h4 class="modal-title">INSTRUCTIONS</h4>
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                         </div>
+                                          <div class="modal-body">
+                                                 <p>GENERAL INSTRUCTIONS:
+The marking scheme for the game is +4/-2. Refreshing the page at any point of time is strictly prohibited.
+There are two lifelines, only one of which can be activated at a time.<br><br>ENDIAN:
+ENDIAN lifeline is activated only when the stack is full. On opting for this lifeline, the four consecutive questions, including the current one, will have the marking scheme +16/-16, +8/-8, +4/-4 and +2/-2; and other lifeline will be disabled.
+<br><br>BUFFER:
+This lifeline saves the question. Three questions can be stored in the BUFFER at a time. You can retrieve the stored questions later. However, it is compulsory to attempt the questions stored in the buffer at a later stage in the game. If you do not attempt the questions stored in the buffer, those questions will be counted as wrong attempts.
+<br><br>BONUS QUESTION:
+On the completion of your allotted time for the game, if your score is above a threshold limit, you will be prompted to attempt a bonus question. You can either choose to attempt it or log out.
+The marking scheme for the Bonus Question is as follows - for each 10 seconds, marks for the question will be halved. Once the marks allotted for the question reaches 0, the marking scheme will continue in the negative, that is -1, -2, -4, -8 and so on.
+</p>
+                                        </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                     </div>
+                                    </div>
+                                      </div>
+                                  </div>
+                    </div>
+                    <div class="col-lg-5" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <button type="button" name="logout" id="lgout" class="btn btn-danger" data-toggle="modal" data-target="#Modal" formmethod="post">
+                            LOG OUT
+                          </button>
+
+
+                          <!-- The Modal -->
+                         <div class="modal" id="Modal">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h4 class="modal-title">Log-out</h4>
+                                  <button type="button" class="close" data-dismiss="modal">x</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  Do you want to log-out?
+                                </div>
+
+                                <!-- Modal footer-->
+                               <div class="modal-footer">
+                                  <button type="submit" class="btn btn-danger" formaction="/logout/" formmethod="post">
+                                      YES</button>
+                                </div>
+
+                              </div>
+                           </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-2 mt-1" style=" height: 6vh; display: flex; justify-content: center;align-items: center;">
+                        <img src="{% static 'images/pisb_color.png' %}" style="height: 5vh;margin-left:0.7vh;margin-bottom:0.5vh">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                    <div class="row"style="text-align:center;height:86vh;">
+                        <div class="col-lg-3"  >
+                            <div class="col-lg-12" style="height:2vh"></div>
+                            <div class="col-lg-11 sidebar"  >
+                                <div class="row" style="display:flex;justify-content: center">
+                                <div class="col-lg-8 mt-4" id="score">
+                            <div class="row mt-1" style="display:flex;justify-content:center">
+                                <div class="col-lg-12" style="text-shadow:0px 0px black;"><h2>SCORE</h2></div>
+                            </div>
+                            <div class="row" style="display:flex;justify-content:center;align-items:center;">
+                                <div class="col-lg-8 scorebox" ><div class="row mt-2"style="display:flex;justify-content:center;align-items:center;text-shadow:0px 0px black">
+                                    <h2>{{ profile.score }}</h2></div></div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row" style="margin-top:3vh;display:flex;justify-content:center">
+                                <div class="col-lg-6 " style="height:5vh">
+                                    <div class="row" id="bffrbox">
+                                <button type="submit"class="col-lg-4 bffr" id="bffr1"style="height:5vh" formaction="../buff/" formmethod="post" name="bffr1">1</button>
+                                <button type="submit"class="col-lg-4 bffr" id="bffr2"style="height:5vh" formaction="../buff/" formmethod="post" name="bffr2">2</button>
+                                <button type="submit"class="col-lg-4 bffr" id="bffr3"style="height:5vh" formaction="../buff/" formmethod="post" name="bffr3">3</button>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row mt-4" style="display:flex;justify-content: center">
+                                <button type="submit" id="facility"  data-toggle="modal" data-target="#lf1modal" formaction="../../pushinbuffer/{{question.id}}/"
+                                formmethod="post" onclick="question()">BUFFER</button>
+                                <!--<div id="lf1modal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+
+                                            Modal content
+                                   <div class="modal-content" style="height:60vh">
+                                      <div class="modal-header">
+                                                <h4 class="modal-title">BUFFER</h4>
+                                                <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                                                           </div>
+                                           <div class="modal-body">
+                                                   <p>Some text in the modal.</p>
+                                          </div>
+                                   <div class="modal-footer">
+                                      <button  onclick="buffer()" type="button" class="btn btn-primary apply" onclick="endian()"data-dismiss="modal">APPLY</button>
+                                      <button type="button" class="btn btn-danger cancel" data-dismiss="modal">CANCEL</button>
+                                       </div>
+                                      </div>
+                                        </div>
+                                    </div>-->
+                            </div>
+
+                            <div class="row mt-4" style="display:flex;justify-content: center">
+                                <input type="number" value="{{ profile.stack }}" id="stack" hidden>
+                                <button  type="submit" formaction="{% url 'endian' %}" id="lifeline" data-toggle="modal" data-target="#lfmodal">ENDIAN</button>
+
+
+                                    <!--<div id="lfmodal" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+
+                                                Modal content
+                                        <div class="modal-content" style="height:60vh">
+                                          <div class="modal-header">
+                                                    <h4 class="modal-title">ENDIAN</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                               </div>
+                                                <div class="modal-body">
+                                                       <p>Some text in the modal.</p>
+                                              </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-primary apply" onclick="endian()"data-dismiss="modal">APPLY</button>
+                                          <button  type="button" class="btn btn-danger cancel" data-dismiss="modal">CANCEL</button>
+                                           </div>
+                                          </div>
+                                            </div>
+                                        </div>-->
+                            </div>
+                            <div class="row mt-5" style="display:flex;justify-content: center;">
+                                <div class="col-lg-6 stck" >
+                                    <div class="row">
+                                        <div id="6"class="col-lg-12 stk" >6</div>
+                                        <div id="5"class="col-lg-12 stk" >5</div>
+                                        <div id="4"class="col-lg-12 stk" >4</div>
+                                        <div id="3"class="col-lg-12 stk" >3</div>
+                                        <div id="2"class="col-lg-12 stk" >2</div>
+                                        <div id="1"class="col-lg-12 stk" >1</div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9" style="margin-left:-2vh;" >
+                            <div class="row" style="height:58vh;display:flex;align-items:center;justify-content: center;">
+                                <div class="col-lg-12" style="height:2vh"></div>
+                                <div class="col-lg-11"  style="border: 0px solid black;height:56vh;">
+                                    <div class="col-lg-12 scroller" id="ques">
+                                        <textarea class="scroller" id="question" style="resize:none" readonly>{{question.question}} </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="height:24vh">
+                                <div class="col-lg-6" >
+                                    <div class="row">
+                                  <div class="col-lg-2" style="height:27vh"></div>
+                                  <div class="col-lg-8" style="height:27vh">
+                                      <div class="row">
+                                      <div class="col-lg-12" id="a" style="border-right:2px solid black;height:5vh"></div>
+                                      </div>
+                                      <div class="row" style="height:9vh;">
+                                            <div class="col-lg-2" ></div>
+                                            <div class="col-lg-8 scroller op"  >
+                                                <input type="radio" name="options" value="1" id="q1" >
+                                                <label for="q1" class="scroller">{{ question.option1 }}</label>
+                                                 </div>
+                                      <div class="col-lg-2" id= "a2"style="height:3.5vh;border-bottom:2px solid black;border-right:2px solid black;border-bottom-right-radius:5px"></div>
+                                    </div>
+                                      <div class="row">
+                                      <div class="col-lg-2"></div>
+                                      <div class="col-lg-8 scroller op" >
+                                        <input type="radio" name="options" value="3" id="q3"  >
+                                        <label for="q3" class="scroller">{{ question.option3 }}</label>
+                                         </div>
+                                      <div class="col-lg-2"id="c1" style="height:3.5vh;border-bottom:2px solid black;"></div>
+                                </div>
+                                </div>
+                                  <div class="col-lg-2" style="height:27vh">
+                                      <div class="row">
+                                        <div class="col-lg-6" id="c2"style="border-right:2px solid black;height:17.5vh;border-bottom:2px solid black;border-bottom-right-radius:5px"></div>
+                                        </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                <div class="col-lg-6" >
+                                    <div class="row">
+                                        <div class="col-lg-2" style="height:27vh">
+                                            <div class="row">
+                                            <div class="col-lg-6" ></div>
+                                            <div class="col-lg-6" id="d1"style="border-left:2px solid black;height:17.5vh;border-bottom:2px solid black;border-bottom-left-radius:5px"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8" style="height:27vh">
+                                                <div class="row">
+                                                <div class="col-lg-6" id="b"style="border-left:2px solid black;height:5vh"></div>
+                                                 </div>
+                                                <div class="row" style="height:9vh">
+                                                      <div class="col-lg-2"id="b2"style="height:3.5vh;border-bottom:2px solid black;border-left:2px solid black;border-bottom-left-radius:5px"></div>
+                                                      <div class="col-lg-8 scroller op"   >
+                                                      <input type="radio" name="options" value="2"id="q2"  >
+                                                    <label for="q2" class="scroller">{{ question.option2 }}</label>
+                                                       </div>
+                                                      <div class="col-lg-2"></div>
+                                              </div>
+                                                <div class="row">
+                                                <div class="col-lg-2"id="d2" style="height:3.5vh;border-bottom:2px solid black"></div>
+                                                <div class="col-lg-8 scroller op"  >
+                                                    <input type="radio" name="options" value="4" id="q4"  >
+                                                    <label for="q4" class="scroller">{{ question.option4 }}</label>
+                                                     </div>
+                                                <div class="col-lg-2"></div>
+                                          </div>
+                                          </div>
+                                            <div class="col-lg-2" style="height:27vh">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row " style="height:5vh;margin-top:-2vh" >
+                                <div class="col-lg-5"></div>
+                                <div class="col-lg-2" >
+                                    {% if profile.lifeline1 %}
+                                    <button type="submit" formaction="{% url 'indexx' qno=question.id %}" id="sbmt" onclick="mksch()" formmethod="post">SUBMIT</button>
+                                    {% else %}
+                                    <button type="submit" formaction="{% url 'post1' qno=question.id %}" id="sbmt" onclick="mksch()" formmethod="post">SUBMIT</button>
+                                    {% endif %}
+
+                                </div>
+                                <div class="col-lg-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row" style="background-color: rgb(0, 0, 0);height:7vh;">
+                            <div class="col-lg-12" style="font-size:18px;border: 2px solid black;height:7vh;display: flex;justify-content: center;align-items: center;color: #d7e9f8">
+                                &copy PICT IEEE STUDENT BRANCH
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal" id="bonusModal">
+                            <div class="modal-dialog">
+                              <div class="modal-content" style="height:40vh">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h4 class="modal-title">Bonus Question</h4>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  Do you want to attempt the bonus question?
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <form>
+                                        <button type="submit" class="btn btn-primary apply" id="yes" formaction="{% url 'bonus' %}" formmethod="post">YES</button>
+                                        <button  type="submit" class="btn btn-primary apply" id="no" formaction="{% url 'login_logout' %}" formmethod="post">NO</button></form>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+      <div class="modal" id="LogoutModal">
+                            <div class="modal-dialog">
+                              <div class="modal-content" style="height: 40vh;">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h4 class="modal-title">TIME OVER</h4>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  Your time is over.
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <form>
+                                        <button type="submit" class="btn btn-primary apply" id="yes" formaction="../logout/" formmethod="post">LOGOUT</button></form>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+<input type="number" value="{{ profile.buff_cntr }}" hidden id="buff_cntr">
+<input type="number" value="{{ profile.buff_que_added }}" hidden id="buffnumber">
+<input type="number" value="{{ buff1 }}" id="buff1" hidden>
+<input type="number" value="{{ buff2 }}" id="buff2" hidden>
+<input type="number" value="{{ buff3 }}" id="buff3" hidden>
+<input type="number" value="{{ lifeline1 }}" id="life" hidden>
+<input type="number" value="{{ lifeline2 }}" id="life2" hidden>
+                        <script src="{% static 'js/jquery.js' %}"></script>
+                        <script src="{% static 'js/bootstrap.js' %}"></script>
+<script>
+                            var count = {{ profile.stack }};
+                           if(count==0)
+{
+    document.getElementById("1").style.visibility="hidden";
+    document.getElementById("2").style.visibility="hidden";
+    document.getElementById("3").style.visibility="hidden";
+    document.getElementById("4").style.visibility="hidden";
+    document.getElementById("5").style.visibility="hidden";
+    document.getElementById("6").style.visibility="hidden";
+}
+else if(count==1)
+{
+    document.getElementById("2").style.visibility="hidden";
+    document.getElementById("3").style.visibility="hidden";
+    document.getElementById("4").style.visibility="hidden";
+    document.getElementById("5").style.visibility="hidden";
+    document.getElementById("6").style.visibility="hidden";
+}
+else if(count==2)
+{
+    document.getElementById("3").style.visibility="hidden";
+    document.getElementById("4").style.visibility="hidden";
+    document.getElementById("5").style.visibility="hidden";
+    document.getElementById("6").style.visibility="hidden";
+}
+else if(count==3)
+{
+    document.getElementById("4").style.visibility="hidden";
+    document.getElementById("5").style.visibility="hidden";
+    document.getElementById("6").style.visibility="hidden";
+}
+else if(count==4)
+{
+    document.getElementById("5").style.visibility="hidden";
+    document.getElementById("6").style.visibility="hidden";
+}
+else if(count==5)
+{
+    document.getElementById("6").style.visibility="hidden";
+}
+if(count==6)
+document.getElementById("lifeline").disabled=false;
+</script>
+<script src="{% static 'js/round1code.js' %}"></script>
+    <script>
+document.getElementById("bffr1").addEventListener("click", buffer1);
+document.getElementById("bffr2").addEventListener("click", buffer2);
+document.getElementById("bffr3").addEventListener("click", buffer3);
+document.getElementById("lifeline").addEventListener("click", endian);
+
+
+    function question(){
+    if({{ profile.lifeline1 }} == 1 || {{ profile.life_counter }} == 2)
+    {
+    document.getElementById("facility").disabled = true;
+    }
+    else
+    if({{ full_buff }} <= 2){
+    }
+    else
+    {
+    window.alert("cant push in buffer");
+    document.getElementById("facility").disabled = true;
+    }
+    }
+    }
+    function buffer1(){
+    console.log("Hello");
+    if({{ profile.life_counter }} == 2 || {{ profile.lifeline1 }} == 1)
+    {
+    document.getElementById("bffr1").disabled = true;
+    }
+    else
+    if({{ buff1 }} == 0)
+    {
+    document.getElementById("bffr1").disabled = true;
+    }
+    }
+    function buffer2(){
+    if({{ profile.life_counter }} == 2 || {{ profile.lifeline1 }} == 1)
+    {
+    document.getElementById("bffr2").disabled = true;
+    }
+    else
+    if({{ buff2 }} == 0){
+    document.getElementById("bffr2").disabled = true;
+    }
+    }
+    function buffer3(){
+    if({{ profile.life_counter }} == 2 || {{ profile.lifeline1 }} == 1)
+    {
+    window.alert("cant render buffer question");
+    document.getElementById("bffr3").disabled = true;
+    }
+    else
+    if({{ buff3 }} == 0){
+    document.getElementById("bffr3").disabled = true;
+    }
+    }
+    </script>
+            </body>
+        </form>
+</html>

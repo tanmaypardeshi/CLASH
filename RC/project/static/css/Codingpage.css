@@ -1,0 +1,612 @@
+
+
+@font-face{
+            font-family: mplus;
+            src: url(mplus.ttf);
+        }
+
+        @font-face{
+    font-family: ss;
+    src: url(ssss.ttf);
+    }
+
+        body{
+            background: url(/static/images/black.jpeg);
+            overflow:hidden;
+            background-repeat: no-repeat;
+            background-size:100%;
+font-family: 'M PLUS 1p', sans-serif;        }
+
+
+
+.button{
+    width:70%;
+ background-color:rgb(253, 30, 30);
+ color: white;
+ border-radius: 5px;
+ border:none;
+ height: 5vh;
+outline: none;
+}
+.button:hover{
+    background-color:rgba(255, 146, 146, 0.993);
+}
+
+.timer{
+font-family: ss;
+}
+
+#invalidtxt{
+    height: 3vh;
+    text-align: left;
+    padding-left: 130px;
+    opacity: 0;
+    color: rgba(255, 0, 0, 0.993);
+}
+
+#invalidtxt2{
+    height: 3vh;
+    text-align: right;
+    padding-right: 290px;
+    opacity: 0;
+    color: rgba(255, 146, 146, 0.993);
+}
+
+.inchoice{
+    animation: inv 1s ease-in-out;
+}
+
+@keyframes inv {
+    0%{
+
+    }
+    25%{
+        background: rgb(189, 0, 0);
+    }
+    50%{
+        background: rgba(0,0,0,0.4);
+    }
+    75%{
+        background: rgb(189, 0, 0);
+    }
+    100%{
+        background: rgba(0,0,0,0.4);
+    }
+}
+
+
+.textarea2{
+    height: 6vh;
+    resize: none;
+    width: 25vh;
+    font-size: 3.5vh;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.df{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.shake {
+    animation: sh 0.5s ease-out;
+}
+
+@keyframes sh {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+}
+
+.appear{
+    animation: app 1s ease-out;
+}
+
+@keyframes app {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.b{
+    border: 0px white solid;
+    border-radius: 5px;
+}
+.img1{
+    height: 20vh;
+    width: 15vw;
+}
+.t1{
+    height: 57vh;
+    width: 60vw;
+    resize: none;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 1.2vw;
+    color: rgb(255, 255, 230)	;
+    background: #000000;
+    padding-top: 10px;
+    box-shadow: 0 0 5px 1px rgb(2, 2, 2);
+}
+.fillg{
+    border: 1px solid #1eff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    color: #1eff00;
+    height: 9vh;
+    line-height: 14vh;
+    border-radius: 5px;
+}
+
+
+.fillr{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    height: 9vh;
+    border-radius: 5px;
+    color: red;
+    line-height: 14vh;
+}
+
+
+.q{
+    color: rgb(255, 255, 230);
+}
+.bt{
+    width: 11vw;
+    height: 6vh;
+    border-radius: 5px;
+}
+.ms{
+    
+    font-size: 2.1vh;
+    color: black;
+    font-weight: bold;
+    
+}
+
+::placeholder {
+    color: rgb(255, 255, 230)	;
+    font-size: 20px;
+}
+
+.att1{
+    width: 17vw;
+    height: 8vh;
+    border-radius: 5px;
+    /* background: #000000; */
+    background: linear-gradient(rgb(14, 13, 13),rgb(36, 36, 36));
+    box-shadow: 0 0 2px 1px rgb(112, 112, 112);
+    border: none;
+    outline: none;
+    text-align: center;
+    color: rgb(255, 255, 230)	;
+    font-size: 25px;
+}
+
+.att2{
+    width: 17vw;
+    height: 8vh;
+    border-radius: 5px;
+    /* background: #000000; */
+    background: linear-gradient(rgb(14, 13, 13),rgb(36, 36, 36));
+    box-shadow: 0 0 2px 1px rgb(112, 112, 112);
+    border: none;
+    outline: none;
+    text-align: center;
+    color: rgb(255, 255, 230)	;
+    font-size: 25px;
+}
+
+.ms2{
+    font-size: 2.1vh;
+    color: rgb(0, 0, 0);
+    margin-top: 2vh;
+    font-weight: bold;
+}
+.op{
+    background-color: rgba(0, 0, 0, 0.418);
+}
+
+.zz{
+    opacity: 1;
+    background-color: rgb(255, 255, 230);
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 230);
+    height: 6vh;
+}
+
+.zz:hover{
+    box-shadow: 0 5px 5px 0 rgb(0, 0, 0);
+    background-color: rgb(58, 58, 58);
+    color: rgb(214, 214, 214);
+    border: 2px solid rgb(214, 214, 214);
+}
+
+.mod {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.445); /* Black w/ opacity */
+    perspective: 800px;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #000000;
+    margin: auto;
+    margin-top: 1vh;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    height: 60vh;
+    color: rgb(255, 255, 230);
+  }
+  
+
+
+
+
+
+  /* The Close Button */
+  .close {
+    float: right;
+    font-size: 28px;
+    color: #aaaaaa;
+    font-weight: bold;
+  }
+  .close4 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close2 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(255, 255, 230);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+    
+  .close2:hover,
+  .close2:focus {
+    color: rgb(255, 255, 230);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .close4:hover,
+  .close4:focus {
+    color: rgb(255, 255, 230);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+
+  #modal-header {
+    padding: 2px 16px;
+    
+    text-align: center;
+    height: 10vh;
+  }
+
+  #modal-body{
+      height: 50vh;
+      text-align: center;
+      font-size: 3vh;
+      
+  }
+
+
+
+  .disabled{
+      cursor: not-allowed;
+      background: rgba(0,0,0,0.4);
+  }
+
+  .modallog{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.062); /* Black w/ opacity */
+  }
+  
+  .folder {
+    /* This will enable the 3D effect. Decrease this value
+     * to make the perspective more pronounced: */
+
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+
+    width: 210px;
+    height: 140px;
+    margin: -60px 0 0 -108px;
+}
+
+.folder div{
+    width:140px;
+    height:100px;
+
+    background-color:#93bad8;
+
+    /* Enabling 3d space for the transforms */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    /* Enabling a smooth animated transition */
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    transition:0.5s;
+
+    /* Disable text seleltion on the folder */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-65px;
+}
+
+.folder .front{
+    border-radius:5px 5px 0 0;
+
+    -moz-transform:rotateX(-25deg);
+    -webkit-transform:rotateX(-25deg);
+    transform:rotateX(-25deg);
+
+    -moz-transform-origin:50% 100%;
+    -webkit-transform-origin:50% 100%;
+    transform-origin:50% 100%;
+
+    background-image: -moz-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: -webkit-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: linear-gradient(top, #c0c0c00%, #969696 85%, #6b6b6b 100%);
+    box-shadow:0 -2px 2px rgba(0,0,0,0.1), 0 1px rgba(255,255,255,0.35) inset;
+
+    z-index:10;
+
+    font-size: 26px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+    line-height: 90px;
+}
+
+.folder .back{
+    background-image: -moz-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: -webkit-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+
+    border-radius:0 5px 0 0;
+    box-shadow:0 -1px 1px rgba(0,0,0,0.15);
+}
+
+/* The top part */
+.folder .back:before{
+    content:'';
+    width:60px;
+    height:10px;
+    border-radius:4px 4px 0 0;
+    background-color:#c0c0c0;
+    position:absolute;
+    top:-10px;
+    left:0px;
+    box-shadow:0 -1px 1px rgba(0,0,0,0.15);
+}
+
+/* The shadow */
+.folder .back:after{
+    content:'';
+    width:100%;
+    height:4px;
+    border-radius:5px;
+    position:absolute;
+    bottom:5px;
+    left:0px;
+    box-shadow:0 4px 8px #333;
+}
+
+.folder:hover .front{
+    -moz-transform:rotateX(-40deg);
+    -webkit-transform:rotateX(-40deg);
+    transform:rotateX(-40deg);
+}
+
+.folder:hover {
+    cursor: pointer;
+}
+
+
+.folder2 {
+    /* This will enable the 3D effect. Decrease this value
+     * to make the perspective more pronounced: */
+
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+
+    width: 210px;
+    height: 140px;
+    margin: 140px 0 0 -95px;
+}
+
+.folder2 div{
+    width:140px;
+    height:100px;
+
+    background-color:#93bad8;
+
+    /* Enabling 3d space for the transforms */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    /* Enabling a smooth animated transition */
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    transition:0.5s;
+
+    /* Disable text seleltion on the folder */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-75px;
+}
+
+.folder2 .front2{
+    border-radius:5px 5px 0 0;
+
+    -moz-transform:rotateX(-25deg);
+    -webkit-transform:rotateX(-25deg);
+    transform:rotateX(-25deg);
+
+    -moz-transform-origin:50% 100%;
+    -webkit-transform-origin:50% 100%;
+    transform-origin:50% 100%;
+
+    background-image: -moz-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: -webkit-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: linear-gradient(top, #c0c0c00%, #969696 85%, #6b6b6b 100%);
+
+    box-shadow:0 -2px 2px rgba(0,0,0,0.1), 0 1px rgba(255,255,255,0.35) inset;
+
+    z-index:10;
+
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+    line-height: 90px;
+}
+
+.folder2 .back2{
+    background-image: -moz-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: -webkit-linear-gradient(top, #c0c0c0 0%, #969696 85%, #6b6b6b 100%);
+    background-image: linear-gradient(top, #c0c0c00%, #969696 85%, #6b6b6b 100%);
+
+    border-radius:0 5px 0 0;
+    box-shadow:0 -1px 1px rgba(0,0,0,0.15);
+}
+
+/* The top part */
+.folder2 .back2:before{
+    content:'';
+    width:60px;
+    height:10px;
+    border-radius:4px 4px 0 0;
+    background-color:#c0c0c0;
+    position:absolute;
+    top:-10px;
+    left:0px;
+    box-shadow:0 -1px 1px rgba(0,0,0,0.15);
+}
+
+/* The shadow */
+.folder2 .back2:after{
+    content:'';
+    width:100%;
+    height:4px;
+    border-radius:5px;
+    position:absolute;
+    bottom:5px;
+    left:0px;
+    box-shadow:0 4px 8px #333;
+}
+
+.folder2:hover .front2{
+    -moz-transform:rotateX(-40deg);
+    -webkit-transform:rotateX(-40deg);
+    transform:rotateX(-40deg);
+}
+
+.folder2:hover {
+    cursor: pointer;
+}
+
+#submit{
+    width: 10vw;
+}
+
+.footer{
+     font-family: 'M PLUS 1p', sans-serif;
+    border: 2px solid black;
+    height:7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8f7ee;
+    font-size: 18px;
+}

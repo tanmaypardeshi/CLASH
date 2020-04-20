@@ -12,8 +12,11 @@
 * To install requirements and run project: 
     1. Start virtualenv
     2. To install dependencies required **pip3 install -r requirements.txt**
-    3. To run clash **python manage.py runserver**
-    4. Enjoy!
+    3. Run **python manage.py makemigrations**
+    4. Run **python manage.py migrate** to make migrations
+    5. Add a few questions in the database to see functioning
+    6. To run clash **python manage.py runserver**
+    7. Enjoy!
 
 ### Technology Used:
 

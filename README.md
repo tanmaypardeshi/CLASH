@@ -29,7 +29,7 @@
   1. Django 3.0.5 (Python web framework)
  
 * **Database used:**
- 1. SQLite3
+  1. SQLite3
  
 ### Snippets of the project:
 

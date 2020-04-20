@@ -43,7 +43,7 @@
 #### 3. Questions page
 ![clash3](/screenshots/clash3.png)
 
-#### Result Page
+#### 4. Result Page
 ![clash4](/screenshots/clash4.png)
 
 

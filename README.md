@@ -33,11 +33,17 @@
  
 ### Snippets of the project:
 
-### 1. Login page
+#### 1. Login page
 
 ![clash1](/screenshots/clash1.png)
+
+#### 2. Instruction page
 ![clash2](/screenshots/clash2.png)
+
+#### 3. Questions page
 ![clash3](/screenshots/clash3.png)
+
+#### Result Page
 ![clash4](/screenshots/clash4.png)
 
 

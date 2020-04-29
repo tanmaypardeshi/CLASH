@@ -1,6 +1,6 @@
 # CLASH CREDENZ 19'
 
-#### Working project of Clash which is a technical MCQ based event in Credenz organised by PICT IEEE Student Branch
+### Working project of Clash which is a technical MCQ based event in Credenz organised by PICT IEEE Student Branch
 
 ## Steps to run project:
 
@@ -18,7 +18,7 @@
     6. To run clash **python manage.py runserver**
     7. Enjoy!
 
-### Technology Used:
+## Technology Used:
 
 * **Front end:**
   1. HTML5
@@ -31,26 +31,25 @@
 * **Database used:**
   1. SQLite3
  
-### Modules Used:
+## Modules Used:
 
 * User authentication
 * Timer
 * Conditional controlling of HTML elements
 * Dealing with garbage url 
 
-### Snippets of the project:
+## Snippets of the project:
 
-#### 1. Login page
-
+### 1. Login page
 ![clash1](/screenshots/clash1.png)
 
-#### 2. Instruction page
+### 2. Instruction page
 ![clash2](/screenshots/clash2.png)
 
-#### 3. Questions page
+### 3. Questions page
 ![clash3](/screenshots/clash3.png)
 
-#### 4. Result Page
+### 4. Result Page
 ![clash4](/screenshots/clash4.png)
 
 

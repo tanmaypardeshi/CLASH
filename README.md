@@ -31,6 +31,13 @@
 * **Database used:**
   1. SQLite3
  
+### Modules Used:
+
+* User authentication
+* Timer
+* Conditional controlling of HTML elements
+* Dealing with garbage url 
+
 ### Snippets of the project:
 
 #### 1. Login page

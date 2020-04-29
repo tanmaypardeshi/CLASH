@@ -10,7 +10,7 @@
 * To activate virtualenv: **source venv/bin/activate**
 * To deactivate virtualenv: **deactivate**
 * To install requirements and run project: 
-    1. Start virtualenv
+    1. Activate virtualenv
     2. To install dependencies required **pip3 install -r requirements.txt**
     3. Run **python manage.py makemigrations**
     4. Run **python manage.py migrate** to make migrations

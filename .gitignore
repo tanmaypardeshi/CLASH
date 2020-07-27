@@ -2,3 +2,7 @@ db.sqlite3
 .idea
 clash
 project/migrations
+project/views.py
+project/urls.py
+project/models.py
+problem3/settings.py
